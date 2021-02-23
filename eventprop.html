@@ -1,0 +1,36 @@
+
+
+	<div id = "outer">
+	<p> second div </p>
+	<div id ="inner">
+		<p> first div </p>
+		<br>
+		<br>
+		<button> tap </button>
+	</div>
+</div>
+<script type="text/javascript">
+	let touch= document.querySelector("button");
+	let out= document.querySelector("#outer");
+	let inn= document.querySelector("#inner");
+
+	touch.addEventListener('click', ()=> {
+		console.log("handler for button");
+		button.style.background=("green");
+		if(event.button==2)
+		{
+			event.stopPropagation();
+		}
+		
+	});
+	inn.addEventListener('click', ()=> {
+		console.log("handler for first div");
+		inn.style.background=("blue");
+		event.stopPropagation();
+	});
+	out.addEventListener('click', ()=> {
+		console.log("handler for second div");
+		out.style.background=("pink");
+		event.stopPropagation();
+	});
+</script>
